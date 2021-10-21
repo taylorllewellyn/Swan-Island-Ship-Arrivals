@@ -1,0 +1,138 @@
+html {
+
+}
+body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas:
+        "title title title"
+        "main main main"
+        "footer footer footer";
+    Font-Family: 'Nunito', Sans-Serif;
+    Font-Size: 24px;
+    background-color: hsla(0, 0%, 95%, 1);
+    color: black;
+    text-align: center;
+    line-height: 1;
+    margin: 0 3px;
+    padding-bottom: 1rem;
+}
+p, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+h1 {
+    font-size: 4rem;
+}
+h2 {
+    font-size: 3rem;
+}
+p {
+    Font-Family: 'PT Sans', Sans-Serif;
+    Font-Size: 17px;
+}
+.title {
+    grid-area: title;
+    position: fixed;
+    background-color: hsla(0, 0%, 95%, .8);
+    z-index: 100;
+    width: 100%;
+    margin: 0;
+}
+.vessels-container {
+    grid-area: main;
+    position: relative;
+    top: 7rem;
+}
+.vessels-item {
+    border: 5px solid hsla(0, 0%, 30%, 1);
+    border-radius: 10px;
+    margin-top: 20px;
+    display: grid;
+    grid-template: auto / 1fr 1fr 1fr;
+    grid-template-areas: 
+        "date none time"
+        "vessel vessel vessel"
+        "from . to";
+    align-content: space-around;
+}
+@media only screen and (min-width: 1000px) {
+    .vessels-container {
+        display: inline-flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        top: 4rem;
+    }
+    .hidden {
+        display: none !important;
+    }
+    h3 {
+        font-size: 2rem;
+    }
+    .vessels-item {
+        margin-left: 5px;
+        margin-right: 5px;
+        min-width: 500px;
+        max-width: 600px;
+        display: inline-grid;
+        flex: 1 1;
+    }
+}
+.item {
+    align-self: center;
+    margin-top: 5px;
+}
+.date {
+    grid-area: date;
+}
+.time {
+    grid-area: time;
+}
+.ship-info-container {
+    grid-area: vessel;
+    position: relative;
+    text-align: center;
+    height: 400px;
+    background-image: url("../images/Athena.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.ship-info {
+    background-color: hsla(0, 0%, 0%, 0.5);
+    border-radius: 10px;
+    padding: 20px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: hsla(0, 0%, 95%, 1);
+}
+.from {
+    grid-area: from;
+}
+.to {
+    grid-area: to;
+}
+footer {
+    grid-area: footer;
+    position: fixed;
+    background-color: hsla(0, 0%, 95%, .8);
+    z-index: 99;
+    width: 100%;
+    bottom: 0;
+    height: 1rem;
+}
+#uss-mccampbell {
+    background-image: url("../images/USS_McCampbell.jpeg");
+}
+#decisive {
+    background-image: url("../images/decisive.jpeg");
+}
+#cape-isabel {
+    background-image: url("../images/cape-isabel.jpeg");
+}
+#usns-guadelupe {
+    background-image: url("../images/usns_guadelupe.jpeg");
+}
